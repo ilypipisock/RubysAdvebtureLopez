@@ -1,0 +1,32 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class RubysController : MonoBehaviour
+{
+    // Start is called before the first frame update
+    void Start()
+    {
+        
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        //Creating the two variables that use the pre built axes
+        float horizontal = Input.GetAxis("Horizontal");
+        float vertical = Input.GetAxis("Vertical");
+
+        //create the movment vector
+        Vector2 position = transform.position;
+
+
+        //changing the x and y position
+        position.x = position.x + 3.0f * horizontal * Time.deltaTime;
+        position.y = position.y + 3.0f * vertical * Time.deltaTime;
+
+
+        //Set the upadte position
+        transform.position = position;
+    }
+}
